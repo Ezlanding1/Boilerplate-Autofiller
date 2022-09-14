@@ -1,0 +1,118 @@
+{
+	"Outline":{
+        "label":"LanguageName",
+        "Boilerplate":null,
+        "Children":null,
+        "detail":null
+    },
+    "Languages":[
+        {
+            "label":"C#",
+            "Boilerplate":"using System;\n\npublic class Program\n{\n\tpublic static void Main()\n\t{\n\t\tConsole.WriteLine(\"Hello World\");\n\t}\n}",
+            "Children":null,
+            "detail":null
+        },
+        {
+            "label":"C",
+            "Boilerplate":"#include <stdio.h>\n\nint main() {\n\tprintf(\"Hello, World!\");\n\treturn 0;\n}",
+            "Children":null,
+            "detail":null
+        },
+        {
+            "label":"C++",
+            "Boilerplate":"#include <iostream>\n\nint main() {\n\tstd::cout << \"Hello World!\";\n\treturn 0;\n}",
+            "Children":null,
+            "detail":null
+        },
+        {
+            "label":"Java",
+            "Boilerplate":"class Program {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println(\"Hello, World!\");\n\t}\n}",
+            "Children":null,
+            "detail":null
+        },
+        {
+            "label":"HTML",
+            "Boilerplate":null,
+            "Children":[
+                {
+                    "label":"HTML (Full)",
+                    "Boilerplate":"<!DOCTYPE html>\n<html label=\"en\">\n\t<head>\n\t\t<meta charset=\"UTF-8\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n\t\t<title>HTML 5 Boilerplate</title>\n\t\t<link rel=\"stylesheet\" href=\"style.css\">\n\t</head>\n\t<body>\n\t\t<script src=\"index.js\"></script>\n\t</body>\n</html>",
+                    "Children":null,
+                    "detail":null
+                },
+                {
+                    "label":"HTML (Verbose)",
+                    "Boilerplate":"<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>Page Title</title>\n\t</head>\n\t<body>\n\t\n\t\t<h1>This is a Heading</h1>\n\t\t<p>This is a paragraph.</p>\n\t\n\t</body>\n</html>",
+                    "Children":null,
+                    "detail":null
+                }
+            ],
+            "detail":null
+        },
+        {
+            "label":"Python",
+            "Boilerplate":null,
+            "Children":[
+                {
+                    "label":"Python (Main)",
+                    "Boilerplate":"def main():\n\tprint(\"hello world\")\n\nif __name__ == \"__main__\":\n\tmain()",
+                    "Children":null,
+                    "detail":null
+                },
+                {
+                    "label":"Python (File IO)",
+                    "Boilerplate":"fin = open (\"test.in\", \"r\")\nfout = open (\"test.out\", \"w\")\nx,y = map(int, fin.readline().split())\nsum = x+y\nfout.write (str(sum) + \"\\n\")\nfin.close()\nfout.close()",
+                    "Children":null,
+                    "detail":null
+                }
+            ],
+            "detail":null
+        },
+        {
+            "label":"Special",
+            "Boilerplate":null,
+            "Children":[
+                {
+                    "label":"USACO",
+                    "Boilerplate":null,
+                    "Children":[
+                        {
+                            "label":"USACO Python",
+                            "Boilerplate":"\"\"\"\nID: your_id_here\nLANG: PYTHON2\nTASK: test\n\"\"\"\nfin = open (\"test.in\", \"r\")\nfout = open (\"test.out\", \"w\")\nx,y = map(int, fin.readline().split())\nsum = x+y\nfout.write (str(sum) + \"\\n\")\nfout.close()",
+                            "Children":null,
+                            "detail":null
+                        },
+                        {
+                            "label":"USACO C",
+                            "Boilerplate":"/*\nID: your_id_here\nLANG: C\nTASK: test\n*/\n#include <stdio.h>\n#include <stdlib.h>\nvoid\nmain () {\n\tFILE *fin  = fopen (\"test.in\", \"r\");\n\tFILE *fout = fopen (\"test.out\", \"w\");\n\tint a, b;\n\tfscanf (fin, \"%d %d\", &a, &b);\t  /* the two input integers */\n\tfprintf (fout, \"%d\\n\", a+b);\n\texit (0);\n}",
+                            "Children":null,
+                            "detail":null
+                        },
+                        {
+                            "label":"USACO C++",
+                            "Boilerplate":"/*\nID: your_id_here\nTASK: test\nLANG: C++\n*/\n/* label can be C++11 or C++14 for those more recent releases */\n#include <iostream>\n#include <fstream>\n#include <string>\n\nusing namespace std;\n\nint main() {\n\tofstream fout (\"test.out\");\n\tifstream fin (\"test.in\");\n\tint a, b;\n\tfin >> a >> b;\n\tfout << a+b << endl;\n\treturn 0;\n}",
+                            "Children":null,
+                            "detail":null
+                        },
+                        {
+                            "label":"USACO Java",
+                            "Boilerplate":"/*\nID: your_id_here\nLANG: JAVA\nTASK: test\n*/\nimport java.io.*;\nimport java.util.*;\n\nclass test {\n  public static void main (String [] args) throws IOException {\n\t// Use BufferedReader rather than RandomAccessFile; it\"s much faster\n\tBufferedReader f = new BufferedReader(new FileReader(\"test.in\"));\n\t\t\t\t\t\t\t\t\t\t\t\t  // input file name goes above\n\tPrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(\"test.out\")));\n\t// Use StringTokenizer vs. readLine/split -- lots faster\n\tStringTokenizer st = new StringTokenizer(f.readLine());\n\t\t\t\t\t  // Get line, break into tokens\n\tint i1 = Integer.parseInt(st.nextToken());\t// first integer\n\tint i2 = Integer.parseInt(st.nextToken());\t// second integer\n\tout.println(i1+i2);\t\t\t\t\t\t   // output result\n\tout.close();\t\t\t\t\t\t\t\t  // close the output file\n  }\n}",
+                            "Children":null,
+                            "detail":null
+                        },
+                        {
+                            "label":"USACO Pascal",
+                            "Boilerplate":"{\nID: your_id_here\nTASK: test\nLANG: PASCAL\n}\nProgram Test;\nVar fin, fout: text;\n\ta, b: word;\nBegin\n\tAssign(fin, \"test.in\"); Reset(fin);\n\tAssign(fout, \"test.out\"); Rewrite(fout);\n\tReadln(fin, a, b);\n\tWriteln(fout, a+b);\n\tClose(fout);\nEnd.",
+                            "Children":null,
+                            "detail":null
+                        }
+                    ],
+                    "detail":null
+                }
+            ],
+            "detail":null
+        }
+    ]
+}
+
+
