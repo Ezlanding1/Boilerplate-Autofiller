@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const {readFileSync, promises: fsPromises} = require('fs');
+const path = require('path');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -20,13 +21,13 @@ const BoilerplateFiller = async function(languages){
         value.detail = value.detail? value.detail : "Fills In Boilerplate For '" + value.label + "'";
     });
     let result = await vscode.window.showQuickPick(languages, {matchOnDetail:"true"});
-    if (!result){
+    if (!result) {
         return;
     }
-    if (result["Children"]){
+    if (result["Children"]) {
         BoilerplateFiller(result["Children"]);
     }
-    else{
+    else {
         write(result);
     }  
 }
@@ -38,7 +39,7 @@ function activate(context) {
     if (!dir){
         console.error("Error: Path not found");
     }
-    var langs = JSON.parse(readFileSync(`${dir}\\languages.json`));
+    var langs = JSON.parse(readFileSync(path.join(dir, "languages.json")));
     if (!langs){
         console.error("Error: languages.json does not exist or contatins invalid JSON data");
     }
